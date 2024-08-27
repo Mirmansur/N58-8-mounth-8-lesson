@@ -78,7 +78,7 @@ const Search: React.FC = () => {
         </form>
       </div>
       <section className="w-full max-w-md p-4 bg-white shadow-md rounded-lg mt-10 flex flex-col">
-        {isFetching && <div>Loading...</div>}{" "}
+        {isFetching && <div>Loading...</div>}
         {error && <div>Error: {error.message}</div>}
         {data && (
           <>
@@ -86,7 +86,7 @@ const Search: React.FC = () => {
               <Image
                 width={200}
                 height={200}
-                src={data.avatar_url ?? ""}
+                src={data.avatar_url}
                 alt="user-img"
                 className="h-20 w-20 rounded-full"
               />
