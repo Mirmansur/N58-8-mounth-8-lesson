@@ -12,7 +12,7 @@ interface GitHubUser {
   bio: string | null;
   blog: string;
   company: string | null;
-  created_at: string; // ISO 8601 date string
+  created_at: string;
   email: string | null;
   events_url: string;
   followers: number;
@@ -50,12 +50,12 @@ const Search: React.FC = () => {
       fetch(`https://api.github.com/users/${userName}`).then((res) =>
         res.json()
       ),
-    enabled: false, // Disable automatic fetching
+    enabled: false,
   });
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    refetch(); // Manually trigger a refetch
+    refetch();
   }
 
   return (
