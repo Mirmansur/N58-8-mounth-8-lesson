@@ -50,12 +50,12 @@ const Search: React.FC = () => {
       fetch(`https://api.github.com/users/${userName}`).then((res) =>
         res.json()
       ),
-    enabled: false,
+    enabled: false, // Disable automatic fetching
   });
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    refetch();
+    refetch(); // Manually trigger a refetch
   }
 
   return (
@@ -79,12 +79,10 @@ const Search: React.FC = () => {
       </div>
       <section className="w-full max-w-md p-4 bg-white shadow-md rounded-lg mt-10 flex flex-col">
         {isFetching && <div>Loading...</div>}{" "}
-        {/* Show loading only when fetching */}
         {error && <div>Error: {error.message}</div>}
         {data && (
           <>
             <section className="flex items-center gap-10">
-              {/* User image */}
               <Image
                 width={200}
                 height={200}
