@@ -1,3 +1,4 @@
+"use client";
 type Props = {
   value: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
